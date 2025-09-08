@@ -427,6 +427,8 @@ public class CrudAppFrame extends javax.swing.JFrame {
             if (ex.getMessage().contains("UNIQUE constraint failed")) {
                 JOptionPane.showMessageDialog(this, "Duplicate Value! This Product Might Alredy Exist.");
             }
+            Logger.getLogger(CrudAppFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Product Adding Failed!\n"+ex.getMessage());
         } catch (NumberFormatException numEX){
             JOptionPane.showMessageDialog(this, "Price and Quantity Field Most be a Number!");
         } catch (Exception ex){
@@ -489,6 +491,8 @@ public class CrudAppFrame extends javax.swing.JFrame {
             if (ex.getMessage().contains("UNIQUE constraint failed")) {
                 JOptionPane.showMessageDialog(this, "Duplicate Value! This Product Might Already Exist.");
             }
+            Logger.getLogger(CrudAppFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Product Updating Failed!\n"+ex.getMessage());
         } catch (NumberFormatException numEX){
             JOptionPane.showMessageDialog(this, "Price and Quantity Field Most be a Number!");
         } catch (Exception ex){
@@ -617,6 +621,8 @@ public class CrudAppFrame extends javax.swing.JFrame {
                 if (ex.getMessage().contains("UNIQUE constraint failed")) {
                     JOptionPane.showMessageDialog(this, "Duplicate Value! \nThe CSV File May Contain Products That Maybe Already Existed.");
                 }
+                Logger.getLogger(CrudAppFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Importing Failed!\n" + ex.getMessage());
             } catch (Exception ex){
                 Logger.getLogger(CrudAppFrame.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Importing Failed!\n" + ex.getMessage());
